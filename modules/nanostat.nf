@@ -3,7 +3,7 @@ process NANOSTAT {
     tag "${sample_id}"
     label 'process_low'
 
-    container 'staphb/nanostat:1.6.0'
+    container 'quay.io/biocontainers/nanostat:1.6.0--pyhdfd78af_0'
 
     publishDir "${params.outdir}/qc/nanostat", mode: 'copy',
         saveAs: { filename -> "${sample_id}_${filename}" }

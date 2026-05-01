@@ -3,7 +3,7 @@ process CHOPPER {
     tag "${sample_id}"
     label 'process_medium'
 
-    container 'quay.io/biocontainers/chopper:0.8.0--hd83dbe4_0'
+    container 'quay.io/biocontainers/chopper:0.7.0--hdcf5f25_0'
 
     publishDir "${params.outdir}/filtered", mode: 'copy',
         pattern: "*.fastq.gz"

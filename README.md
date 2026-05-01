@@ -319,8 +319,8 @@ results/
 
 | Adım | İmaj |
 |------|------|
-| NanoStat | `staphb/nanostat:1.6.0` |
-| Chopper | `quay.io/biocontainers/chopper:0.8.0--hd83dbe4_0` |
+| NanoStat | `quay.io/biocontainers/nanostat:1.6.0--pyhdfd78af_0` |
+| Chopper | `quay.io/biocontainers/chopper:0.7.0--hdcf5f25_0` |
 | Host Removal | `kanatli-host-removal:1.0` (yerel derleme — minimap2 + samtools) |
 | Kraken2 | `staphb/kraken2:2.1.3` |
 | Bracken | `staphb/bracken:2.9` |
