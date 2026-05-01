@@ -18,7 +18,7 @@ process CHOPPER {
     script:
     def max_len_opt = params.max_length > 0 ? "--maxlength ${params.max_length}" : ""
     """
-    gunzip -c ${fastq} 2>/dev/null || cat ${fastq} | \\
+    zcat ${fastq} | \\
         chopper \\
             --quality ${params.min_quality} \\
             --minlength ${params.min_length} \\
