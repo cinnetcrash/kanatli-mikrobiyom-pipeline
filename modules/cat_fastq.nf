@@ -16,7 +16,7 @@ process CAT_FASTQ {
 
     script:
     """
-    N_FASTQ=\$(find ${barcode_dir} -maxdepth 1 -name "*.fastq" -o -name "*.fastq.gz" | wc -l)
+    N_FASTQ=\$(find -L ${barcode_dir} -maxdepth 1 \\( -name "*.fastq" -o -name "*.fastq.gz" \\) | wc -l)
 
     if [ "\$N_FASTQ" -eq 0 ]; then
         echo "HATA: ${barcode_dir} içinde fastq dosyası bulunamadı!" >&2
@@ -27,8 +27,8 @@ process CAT_FASTQ {
 
     # .fastq.gz ve .fastq dosyalarını ayrı ayrı işle
     (
-        find ${barcode_dir} -maxdepth 1 -name "*.fastq.gz" | sort | xargs -r zcat
-        find ${barcode_dir} -maxdepth 1 -name "*.fastq"    | sort | xargs -r cat
+        find -L ${barcode_dir} -maxdepth 1 -name "*.fastq.gz" | sort | xargs -r zcat
+        find -L ${barcode_dir} -maxdepth 1 -name "*.fastq"    | sort | xargs -r cat
     ) | gzip > ${sample_id}_concat.fastq.gz
 
     TOTAL_READS=\$(zcat ${sample_id}_concat.fastq.gz | awk 'NR%4==1' | wc -l)
