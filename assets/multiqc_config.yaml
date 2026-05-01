@@ -1,0 +1,28 @@
+title: "Kanatlı Mikrobiyom Pipeline QC Raporu"
+subtitle: "Nanopore Metagenomik Analizi - Ankara Üniversitesi"
+intro_text: "Yumurtacı tavuk bağırsak mikrobiyom analizi - Zorlamalı tüy dökümü çalışması"
+
+report_comment: "Otomatik üretilmiş MultiQC raporu"
+
+show_analysis_paths: True
+show_analysis_time: True
+
+module_order:
+  - nanostat
+  - kraken
+
+extra_fn_clean_trim:
+  - '_nanostat_summary'
+  - '_kraken2'
+
+table_columns_visible:
+  NanoStat:
+    number_of_reads: True
+    mean_read_length: True
+    mean_read_quality: True
+    median_read_length: True
+    median_read_quality: True
+    n50: True
+
+decimalPoint_format: ","
+thousandsSep_format: "."

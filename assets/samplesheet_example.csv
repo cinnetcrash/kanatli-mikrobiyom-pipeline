@@ -1,0 +1,5 @@
+sample_id,barcode_dir
+S2,/data/barcodes/barcode02_S2
+S3,/data/barcodes/barcode03_S3
+S4,/data/barcodes/barcode04_S4
+S5,/data/barcodes/barcode05_S5

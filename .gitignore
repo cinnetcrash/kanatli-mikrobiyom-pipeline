@@ -1,0 +1,23 @@
+# Veritabanları ve büyük dosyalar
+databases/
+*.tar.gz
+*.fna.gz
+*.fa.gz
+*.mmi
+*.k2d
+*.kmer_distrib
+
+# Nextflow çalışma dizinleri
+work/
+.nextflow/
+.nextflow.log*
+results/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Geçici dosyalar
+*.log
+*.tmp
