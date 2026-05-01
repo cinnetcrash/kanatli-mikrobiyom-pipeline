@@ -135,10 +135,14 @@ git clone https://github.com/cinnetcrash/kanatli-mikrobiyom-pipeline.git
 cd kanatli-mikrobiyom-pipeline
 ```
 
-### 3. Stats Docker İmajını Derle
+### 3. Docker İmajlarını Derle
 
 ```bash
+# İstatistik imajı (Python: pandas, matplotlib, scipy)
 docker build -t kanatli-mikrobiyom-stats:1.0 -f docker/stats/Dockerfile .
+
+# Konak temizleme imajı (minimap2 + samtools)
+docker build -t kanatli-host-removal:1.0 -f docker/host_removal/Dockerfile docker/host_removal/
 ```
 
 ---
@@ -317,7 +321,7 @@ results/
 |------|------|
 | NanoStat | `staphb/nanostat:1.6.0` |
 | Chopper | `quay.io/biocontainers/chopper:0.8.0--hd83dbe4_0` |
-| Host Removal | `quay.io/biocontainers/mulled-v2-ac74a7f02cebcfbc0119723439a5b0ab73e1a7e8` |
+| Host Removal | `kanatli-host-removal:1.0` (yerel derleme — minimap2 + samtools) |
 | Kraken2 | `staphb/kraken2:2.1.3` |
 | Bracken | `staphb/bracken:2.9` |
 | MultiQC | `quay.io/biocontainers/multiqc:1.21--pyhdfd78af_0` |

@@ -3,8 +3,7 @@ process HOST_REMOVAL {
     tag "${sample_id}"
     label 'process_high'
 
-    // minimap2 + samtools içeren mulled container
-    container 'quay.io/biocontainers/mulled-v2-ac74a7f02cebcfbc0119723439a5b0ab73e1a7e8:1f48b67e80ce8dec2f51e38c8deacab3a2c396ee-0'
+    container 'kanatli-host-removal:1.0'
 
     publishDir "${params.outdir}/host_removed", mode: 'copy',
         pattern: "*.fastq.gz"
