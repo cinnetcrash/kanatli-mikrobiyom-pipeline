@@ -10,14 +10,15 @@ process MULTIQC {
     path qc_files
 
     output:
-    path "multiqc_report.html", emit: report
-    path "multiqc_data/",       emit: data
+    path "*multiqc_report.html", emit: report
+    path "*multiqc_report_data/", emit: data
 
     script:
     """
     multiqc \\
         --force \\
-        --title "Kanatlı Mikrobiyom QC Raporu" \\
+        --filename multiqc_report.html \\
+        --title "Kanatli Mikrobiyom QC Raporu" \\
         --comment "Nanopore sekans verileri - Mikrobiyom analizi" \\
         . \\
         -o .
