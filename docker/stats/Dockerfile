@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
     g++ \
     libhdf5-dev \
+    procps \
     && rm -rf /var/lib/apt/lists/*
 
 COPY docker/stats/requirements.txt /tmp/requirements.txt
