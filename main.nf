@@ -67,13 +67,13 @@ workflow {
     CAT_FASTQ(ch_samples)
 
     // 2) Ham okuma QC
-    NANOSTAT_RAW(CAT_FASTQ.out.fastq)
+    NANOSTAT_RAW(CAT_FASTQ.out.fastq, 'raw')
 
     // 3) Kalite filtresi
     CHOPPER(CAT_FASTQ.out.fastq)
 
     // 4) Filtre sonrası QC
-    NANOSTAT_FILTERED(CHOPPER.out.fastq)
+    NANOSTAT_FILTERED(CHOPPER.out.fastq, 'filtered')
 
     // 5) Konak DNA temizliği
     HOST_REMOVAL(CHOPPER.out.fastq, ch_host_genome)
