@@ -22,7 +22,7 @@ process KRAKEN2 {
     """
     kraken2 \\
         --db ${kraken2_db} \\
-        --memory-mapping \\
+        ${params.kraken2_memory_mapping ? '--memory-mapping' : ''} \\
         --threads ${task.cpus} \\
         --report ${sample_id}_kraken2.report \\
         --report-minimizer-data \\
