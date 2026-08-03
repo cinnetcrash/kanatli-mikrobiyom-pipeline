@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: 'kanatli-mikrobiyom-pipeline: a Nextflow DSL2 pipeline for poultry microbiome Nanopore
+  metagenomics'
+type: software
+authors:
+- given-names: Gültekin
+  family-names: Ünal
+  orcid: https://orcid.org/0000-0002-8996-7028
+  affiliation: Ankara University, Faculty of Veterinary Medicine, Department of Microbiology
+abstract: A Nextflow DSL2 pipeline for Oxford Nanopore metagenomic analysis of poultry gut
+  microbiome samples, including read QC, host removal and Kraken2-based taxonomic profiling.
+  Runs with Docker or Singularity.
+repository-code: https://github.com/cinnetcrash/kanatli-mikrobiyom-pipeline
+url: https://github.com/cinnetcrash/kanatli-mikrobiyom-pipeline
+license: MIT
+keywords:
+- poultry
+- microbiome
+- metagenomics
+- Oxford Nanopore
+- Kraken2
+- Nextflow
+- DSL2
