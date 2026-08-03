@@ -365,6 +365,29 @@ docker build -t kanatli-mikrobiyom-stats:1.0 -f docker/stats/Dockerfile .
 
 ---
 
+## Container images
+
+Two steps use images built from this repository rather than pulled from a public
+registry: `kanatli-host-removal` and `kanatli-mikrobiyom-stats`. They are **not
+published yet**, so the `docker`, `singularity` and `truba` profiles will fail
+to pull them until you build and push them yourself, or build them locally:
+
+```bash
+docker build -t ghcr.io/cinnetcrash/kanatli-host-removal:1.0     docker/host_removal
+docker build -t ghcr.io/cinnetcrash/kanatli-mikrobiyom-stats:1.0 docker/stats
+
+# optional: publish so the pipeline can pull them anywhere
+# echo $GITHUB_TOKEN | docker login ghcr.io -u cinnetcrash --password-stdin
+# docker push ghcr.io/cinnetcrash/kanatli-host-removal:1.0
+# docker push ghcr.io/cinnetcrash/kanatli-mikrobiyom-stats:1.0
+```
+
+For Singularity, convert them after building:
+
+```bash
+singularity build kanatli-host-removal_1.0.sif docker-daemon://ghcr.io/cinnetcrash/kanatli-host-removal:1.0
+```
+
 ## Lisans
 
 MIT License — Detaylar için `LICENSE` dosyasına bakın.
